@@ -1,0 +1,20 @@
+{
+    "name": "magelearn/checkout-phone-validator",
+    "description": "Add custom validation for phone number in shipping address and billing address form in Magento2. Also add additional class to telephone field.",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "vijay rami",
+            "email": "vijaymrami@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magelearn\\CheckoutPhoneValidator\\": ""
+        }
+    }
+}
