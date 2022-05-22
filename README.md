@@ -7,5 +7,8 @@ After i found International Telephone Input JS https://intl-tel-input.com/ which
 I have Integrate this jQuery plugin in this Magento2 module. Which adds a country code flag with phone extension prefix dropdown to billing and shipping address telephone field.
 
 # Improvements
+Currently at the moment this module only have the ability to display coutry flag dropdown in Telephone field for both shipping and biliing address form.
+But this Jquery Plugins have more enhanced features which needed to implement:
 
-Currently at the 
+  1. Detects the user's country and preselect that country flag.
+  2. Displays a relevant placeholder according to phone number patterns and provides formatting/validation methods according to it.
