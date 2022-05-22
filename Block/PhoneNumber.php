@@ -44,21 +44,20 @@ class PhoneNumber extends Template
         parent::__construct($context);
     }
 
-    /**
-     * @return bool|string
-     */
-    public function phoneConfig()
+    public function phonePrefferedCountryConfig()
     {
-        $config  = [
-            "nationalMode" => false,
-            "utilsScript"  => $this->getViewFileUrl('Magelearn_CheckoutPhoneValidator::js/utils.js'),
-            "preferredCountries" => [$this->helper->preferedCountry()]
-        ];
+        $preffered_country = [strtolower($this->helper->preferedCountry())];
 
+        return $this->jsonHelper->serialize($preffered_country);
+    }
+    
+    public function phoneOnlyCountryConfig()
+    {
+        $onlycountry = array();
+        
         if ($this->helper->allowedCountries()) {
-            $config["onlyCountries"] = explode(",", $this->helper->allowedCountries());
+            $onlycountry = explode(",", strtolower($this->helper->allowedCountries()));
         }
-
-        return $this->jsonHelper->serialize($config);
+        return $this->jsonHelper->serialize($onlycountry);
     }
 }

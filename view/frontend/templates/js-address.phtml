@@ -4,9 +4,24 @@
  */
 ?>
 <script>
-    require(['jquery', 'intlTelInput'], function($) {
+    require(['jquery', 'Magelearn_CheckoutPhoneValidator/js/utils', 'intlTelInput'], function($, utiljs) {
     	var telephone_input = document.querySelector(".form-address-edit input[name='telephone']");
-    	var config_option = <?php $block->phoneConfig(); ?>
-	    window.intlTelInput(telephone_input, config_option);
+    	var intl_only_countries = <?php echo $block->phoneOnlyCountryConfig(); ?>;
+		var intl_preferred_countries = <?php echo $block->phonePrefferedCountryConfig(); ?>;
+		
+    	const intl_phone_config_option = {
+  			  nationalMode: false,
+  			  initialCountry: "auto",
+  			  onlyCountries: intl_only_countries,
+  			  preferredCountries: intl_preferred_countries,
+  			  geoIpLookup: function(callback) {
+  			    $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+  			      var countryCode = (resp && resp.country) ? resp.country : "us";
+  			      callback(countryCode);
+  			    });
+  			  },
+  			  utilsScript: utiljs // just for formatting/placeholders etc
+  			};
+	    window.intlTelInput(telephone_input, intl_phone_config_option);
     });
 </script>
