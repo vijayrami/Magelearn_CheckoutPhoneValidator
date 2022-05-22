@@ -10,9 +10,8 @@ I have Integrate this jQuery plugin in this Magento2 module. Which adds a countr
 This module also Detects the user's country based on ip and preselect that country flag.
 
 # Improvements
-Currently at the moment this module only have the ability to display coutry flag dropdown in Telephone field for both shipping and biliing address form and Edit address of customer from frontend.
 
-But this Jquery Plugins have more enhanced features which needed to implement:
+This module needs some improvement regarding with Phone number validation.
 
   1. Validating the phone number as per the country code flag selected and its Pattern.
   (https://intl-tel-input.com/node_modules/intl-tel-input/examples/gen/is-valid-number.html)
