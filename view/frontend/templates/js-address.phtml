@@ -1,0 +1,12 @@
+<?php
+/**
+ * @var $block  Magelearn\CheckoutPhoneValidator\Block\PhoneNumber
+ */
+?>
+<script>
+    require(['jquery', 'intlTelInput'], function($) {
+    	var telephone_input = document.querySelector(".form-address-edit input[name='telephone']");
+    	var config_option = <?php $block->phoneConfig(); ?>
+	    window.intlTelInput(telephone_input, config_option);
+    });
+</script>

@@ -1,0 +1,18 @@
+<!-- input field element and corresponding bindings -->
+<input class="input-text shipping-telephone-input" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    },
+    mageInit: {
+    'Magelearn_CheckoutPhoneValidator/js/initIntlTel':{}
+    }" />
+<!-- additional content -->

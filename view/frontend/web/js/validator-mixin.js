@@ -1,7 +1,6 @@
 define([
-    'jquery',
-    'moment'
-], function ($, moment) {
+    'jquery'
+], function ($) {
     'use strict';
 
     return function (validator) {
@@ -9,7 +8,12 @@ define([
             'custom-validate-telephone',
             function (value, params) {
                 var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;
-                return phoneno.test(value);                
+
+                if((value.match(phoneno))){
+                    return true;
+                }else{
+                    return false;
+                }                        
             },
             $.mage.__("Please enter phone number in form of 123-456-7890.")
         );
