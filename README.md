@@ -11,7 +11,7 @@ I have also added some code to add additional class to telephone field with whic
 
 # Screenshots
 
-![form-1](/assets/form-1.png)
+![form-1](/assets/from-1.png)
 
 # Improvements
 
