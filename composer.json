@@ -1,6 +1,6 @@
 {
     "name": "magelearn/checkout-phone-validator",
-    "description": "Add custom validation for phone number in shipping address and billing address form in Magento2. Add flag dropdown to telephone fields. Also add additional class to telephone field.",
+    "description": "Add custom validation for phone number in shipping address, billing address and Edit Address form Addressbook at frontend in Magento2. Also add additional class to telephone field. Add flag dropdown to telephone fields and auto detects user's country based on ip and preselect that country flag with International Telephone Input JS https://intl-tel-input.com/",
     "type": "magento2-module",
     "license": "proprietary",
     "authors": [
